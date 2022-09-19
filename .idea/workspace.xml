@@ -4,28 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb5b389-ccf2-44f0-9096-8376839679b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ArtistDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/GenreDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/PlaylistDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/SongDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/SongPlaylistDataDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Data/Artist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Data/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Data/Playlist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Data/Song.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Data/SongPlaylistData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main/Impl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utilities/DBConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/operations/JukeBoxOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/operations/SongOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Duaa - Arijit Singh - 320Kbps.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases.java" afterDir="false" />
+    <list default="true" id="eeb5b389-ccf2-44f0-9096-8376839679b6" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Ae-Dil-Hai-Mushkil-Title-Track-Arijit-Singh-190Kbps.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Bhare-Naina.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Don-Revisited.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Duaa-Arijit-Singh-320Kbps.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Likhe-Jo-Khat-Tujhe.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Tu-You-Armaan-Malik.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/PlaylistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/SongPlaylistDataDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/SongPlaylistDataDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Duaa - Arijit Singh - 320Kbps.mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,21 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/New folder (2)/BIrdBOx/jukebox-project/jukebox-project",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/New folder (2)/BIrdBOx/jukebox-project/jukebox-project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Impl">
     <configuration name="ArtistDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DAO.ArtistDAO" />
@@ -111,6 +101,14 @@
       <option name="presentableId" value="Default" />
       <updated>1663135991099</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1663521238684</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663521238684</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -34,4 +34,10 @@ public class SongPlaylistDataDAO {
         }
         return songPlaylistData;
     }
+    public static  void removeSongsFromPlaylist (int song_id , int playlist_id) throws SQLException, ClassNotFoundException {
+        Connection conn = DBConnection.getConnection();
+        String sql = "Delete from songsplaylistdata Where song_id = '" + song_id + "'  and playlist_id = '" + playlist_id + "' " ;
+        Statement statement = conn.createStatement();
+        statement.executeUpdate(sql);
+    }
 }

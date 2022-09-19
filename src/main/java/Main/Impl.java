@@ -12,7 +12,7 @@ public class Impl {
         Scanner sc = new Scanner(System.in);
         System.out.println(" Hello ! Please make a choice ");
         System.out.println(" 1 : I want to play a song");
-        System.out.println(" 2: I want to create a playlist first and add songs into it");
+        System.out.println(" 2 : I want to create a playlist first and add songs into it");
         System.out.println(" -1 : Exit ");
 
 
@@ -27,6 +27,7 @@ public class Impl {
                 System.out.println(" 2 : Display by song name");
                 System.out.println(" 3 : Display by Artist name");
                 System.out.println(" 4 : Display by Genre type");
+                System.out.println(" 5 : Goto previous menu");
                 System.out.println(" -1 : Exit ");
 
 //                    System.out.println(" Please enter your choice");
@@ -39,7 +40,6 @@ public class Impl {
                         for (Song song : songlist) {
                             System.out.println(song);
                         }
-                        //  System.out.println(songlist);
                         break;
                     }
 
@@ -73,6 +73,11 @@ public class Impl {
                         System.out.println(songList);
                         break;
                     }
+                    case 5 : {
+                        String [] arg= new String[0];
+                        Impl.main(arg);
+                        break;
+                    }
                 }
                 break;
             }
@@ -83,6 +88,9 @@ public class Impl {
                 System.out.println(" 2 : Show all existing playlists");
                 System.out.println(" 3 : Add songs to an exiting playlist");
                 System.out.println(" 4 : Show all songs in an existing playlist");
+                System.out.println(" 5 : Delete any song from a existing playlist ");
+                System.out.println(" 6 : Delete an entire existing playlist ");
+                System.out.println(" 7 : Return to previous menu ");
                 System.out.println(" -1 : Exit ");
 
                 int userchoice = sc.nextInt();
@@ -122,17 +130,52 @@ public class Impl {
                         for (Playlist playlist1 : playlist) {
                             System.out.println(" Playlist Id : "+""+playlist1.getPlaylist_id()+" Playlist Name : "+""+playlist1.getName_0f_playlist());
                         }
-                        List<SongPlaylistData> listdata = SongPlaylistDataDAO.searchSongsIdFromPlaylistId(playlist);
+                        System.out.println(" Enter the Playlist ID into which you view : ");
+                        int playlist_id = sc.nextInt();
+                        List<Playlist> playlist1 = PlaylistDAO.searchPlaylistByPlaylistId(playlist_id);
+                        List<SongPlaylistData> listdata = SongPlaylistDataDAO.searchSongsIdFromPlaylistId(playlist1);
                         List<Song> list = SongDAO.showSongbySongId(listdata);
                         for (Song song : list) {
                             System.out.println(song);
                         }
                         break;
                     }
-
+                    case 5: {
+                        List <Playlist> playlist = PlaylistDAO.showAllExistingPlaylists();
+                        for (Playlist playlist1 : playlist) {
+                            System.out.println(" Playlist Id : "+""+playlist1.getPlaylist_id()+" Playlist Name : "+""+playlist1.getName_0f_playlist());
+                        }
+                        System.out.println("Enter the playlist_id from which you remove a song. ");
+                        int playlist_id = sc.nextInt();
+                        List<Playlist> playlist1 = PlaylistDAO.searchPlaylistByPlaylistId(playlist_id);
+                        List<SongPlaylistData> listdata = SongPlaylistDataDAO.searchSongsIdFromPlaylistId(playlist1);
+                        List<Song> list = SongDAO.showSongbySongId(listdata);
+                        for (Song song : list) {
+                            System.out.println(song);
+                        }
+                        System.out.println(" Enter the song_id which you want removed from the selected playlist : ");
+                        int song_id = sc.nextInt();
+                        SongPlaylistDataDAO.removeSongsFromPlaylist(song_id,playlist_id);
+                        break;
+                    }
+                    case 6: {
+                        List <Playlist> playlist = PlaylistDAO.showAllExistingPlaylists();
+                        for (Playlist playlist1 : playlist) {
+                            System.out.println(" Playlist Id : "+""+playlist1.getPlaylist_id()+" Playlist Name : "+""+playlist1.getName_0f_playlist());
+                        }
+                        System.out.println("Enter the id of the playlist you want deleted :");
+                        int playlist_id = sc.nextInt();
+                        PlaylistDAO.deleteAnExistingPlaylist(playlist_id);
+                    }
+                    case 7 : {
+                        String [] arg= new String[0];
+                        Impl.main(arg);
+                        break;
+                    }
                 }
                 break;
             }
+
         }
 
     }
