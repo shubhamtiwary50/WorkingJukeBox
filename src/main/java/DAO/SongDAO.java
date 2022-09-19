@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SongDAO {
 
-    public static List<Song> displayAll() throws SQLException, ClassNotFoundException { //displays all songs
+    public static List<Song> displayAll() throws SQLException, ClassNotFoundException,NumberFormatException{ //displays all songs
         Connection connection = DBConnection.getConnection();
         List<Song> songList = new ArrayList<>();
 //        String query = "select songs.sno, playlistentry.name, playlistentry.artist, songs.album, songs.genre, playlistentry.duration\n" +
@@ -23,11 +23,11 @@ public class SongDAO {
         while (resultSet.next()) {
             int id = resultSet.getInt(1);
             String name = resultSet.getString(2);
-            String song_path = resultSet.getString(3);
-            double duration = resultSet.getDouble(4);
+            double duration = resultSet.getDouble(3);
+            String song_path = resultSet.getString(4);
             String artist_id = resultSet.getString(5);
             String genre_id = resultSet.getString(6);
-            Song songs = new Song(id, name,song_path, duration, artist_id, genre_id);
+            Song songs = new Song(id, name,duration,song_path, artist_id, genre_id);
             songList.add(songs);
         }
         return songList;
@@ -45,11 +45,11 @@ public class SongDAO {
         while (resultSet.next()) {
             int id = resultSet.getInt(1);
             String name1 = resultSet.getString(2);
-            String song_path = resultSet.getString(3);
-            double duration = resultSet.getDouble(4);
+            String song_path = resultSet.getString(4);
+            double duration = resultSet.getDouble(3);
             String artist_id = resultSet.getString(5);
             String genre_id = resultSet.getString(6);
-            Song songs = new Song(id, name1,song_path, duration, artist_id, genre_id);
+            Song songs = new Song(id, name,duration,song_path, artist_id, genre_id);
             songList.add(songs);
         }
         return songList;
@@ -68,11 +68,11 @@ public class SongDAO {
         while (resultSet.next()) {
             int id = resultSet.getInt(1);
             String name1 = resultSet.getString(2);
-            String song_path = resultSet.getNString(3);
-            double duration = resultSet.getDouble(4);
+            String song_path = resultSet.getNString(4);
+            double duration = resultSet.getDouble(3);
             String artist_id = resultSet.getString(5);
             String genre_id = resultSet.getString(6);
-            Song songs = new Song(id, name1, song_path,duration, artist_id, genre_id);
+            Song songs = new Song(id, name1,duration,song_path, artist_id, genre_id);
             songList.add(songs);
         }
         }
@@ -92,11 +92,11 @@ public class SongDAO {
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String name1 = resultSet.getString(2);
-                double duration = resultSet.getDouble(4);
-                String song_path = resultSet.getString(3);
+                double duration = resultSet.getDouble(3);
+                String song_path = resultSet.getString(4);
                 String artist_id = resultSet.getString(5);
                 String genre_id = resultSet.getString(6);
-                Song song = new Song(id, name1,song_path,duration,artist_id, genre_id);
+                Song song = new Song(id, name1,duration,song_path, artist_id, genre_id);
                 songList.add(song);
             }
         }
@@ -116,15 +116,27 @@ public class SongDAO {
             {
                 int song_id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
-                String song_path = resultSet.getString(3);
-                double song_duration = resultSet.getDouble(4);
+                String song_path = resultSet.getString(4);
+                double song_duration = resultSet.getDouble(3);
                 String genre_id = resultSet.getString(5);
                 String artist_id = resultSet.getString(6);
-                Song song = new Song(song_id,name,song_path,song_duration,genre_id,artist_id);
+                Song song = new Song(song_id, name,song_duration,song_path, artist_id, genre_id);
                 songsList.add(song);
             }
         }
         return  songsList;
     }
+
+    public static String fetchSongPathBySongId(int song_id) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getConnection();
+        String sql = "Select song_path from songs where song_id = '" +song_id +"'";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        String songPath = null;
+        if (resultSet.next()) {
+            songPath = resultSet.getString(1);
+        }
+        return songPath;
     }
+}
 

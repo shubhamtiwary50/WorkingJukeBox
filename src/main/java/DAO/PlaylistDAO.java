@@ -52,9 +52,9 @@ public class PlaylistDAO {
         return playlistList;
     }
     public static void deleteAnExistingPlaylist(int playlist_id) throws SQLException, ClassNotFoundException {
-        Connection conn = DBConnection.getConnection();
+        Connection connection = DBConnection.getConnection();
         String sql = "Delete from playlist Where playlist_id = '" + playlist_id + "'";
-        Statement statement = conn.createStatement();
+        Statement statement = connection.createStatement();
         statement.executeUpdate(sql);
     }
 }
