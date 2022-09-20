@@ -11,7 +11,7 @@ import java.util.List;
 
 public class GenreDAO {
     public static List<Genre> displayByGenre(String genreName) throws SQLException, ClassNotFoundException
-    { //displays by Genre entered by user
+    {
         Connection connection = DBConnection.getConnection();
         List <Genre> genreList = new ArrayList<>();
          String sql = "SELECT * FROM genre where genre_name like '%"+genreName+"%'";

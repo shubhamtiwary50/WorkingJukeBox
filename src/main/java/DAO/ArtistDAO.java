@@ -1,12 +1,8 @@
 package DAO;
 
 import Data.Artist;
-import Data.Song;
 import Utilities.DBConnection;
-import com.mysql.cj.jdbc.CallableStatement;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +12,6 @@ public static List<Artist> displayByArtistName(String artistName) throws SQLExce
 { //displays by artist name entered by user
     Connection connection = DBConnection.getConnection();
     List <Artist> artistList = new ArrayList<>();
-//        String query = "select songs.sno, playlistentry.name, playlistentry.artist, songs.album, songs.genre, playlistentry.duration\n" +
-//                "from playlistentry join songs on playlistentry.sno = songs.entryno;\n";
     String sql = "SELECT * FROM artist where artist_name like '%"+artistName+"%'";
 
     PreparedStatement preparedStatement = connection.prepareStatement(sql);

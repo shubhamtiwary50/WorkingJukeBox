@@ -36,11 +36,9 @@ public class Impl {
                 System.out.println(" 3 : Display by Artist name");
                 System.out.println(" 4 : Display by Genre type");
                 System.out.println(" 5 : Goto previous menu");
-              //  System.out.println(" -1 : Exit ");
 
-//                    System.out.println(" Please enter your choice");
                 int userchoice = sc.nextInt();
-              //  while (){
+
                 switch (userchoice) {
                     case 1: {
                         List<Song> songlist = SongDAO.displayAll();
@@ -50,14 +48,6 @@ public class Impl {
                             System.out.format("%-10s %-20s %-20s %-20s %-20s \n",song.getSong_id(),song.getSong_name(),song.getSong_duration(),song.getGenre_id(),song.getArtist_id());
                         }
 
-//                        for (Song song : songlist) {
-//                            System.out.println(song);
-//                        }
-//                        System.out.println("Do you want to play a song ? : Yes or No");
-//                        String playsongchoice= sc.nextLine();
-//                        Thread.sleep(5);
-//                        if (playsongchoice.equalsIgnoreCase("Yes"))
-//                        {
                             System.out.println("Enter the song ID which you want to play : ");
                              int song_id = sc.nextInt();
                              String song_path = SongDAO.fetchSongPathBySongId(song_id);
@@ -79,7 +69,6 @@ public class Impl {
                         for (Song song : songlist) {
                             System.out.format("%-10s %-20s %-20s %-20s %-20s \n",song.getSong_id(),song.getSong_name(),song.getSong_duration(),song.getGenre_id(),song.getArtist_id());
                         }
-                        //System.out.println(songlist);
 
                         System.out.println("Enter the song ID which you want to play : ");
                              int song_id = sc.nextInt();
@@ -94,7 +83,7 @@ public class Impl {
 
                     case 3: {
                         System.out.println(" Enter the artist name : ");
-                        //sc.nextLine();
+                        sc.nextLine();
                         String artistName = sc.nextLine();
                         List<Artist> artistList = ArtistDAO.displayByArtistName(artistName);
                         List<Song> songlist = SongDAO.displayingSongByArtistID(artistList);
@@ -104,8 +93,6 @@ public class Impl {
                         for (Song song : songlist) {
                             System.out.format("%-10s %-20s %-20s %-20s %-20s \n",song.getSong_id(),song.getSong_name(),song.getSong_duration(),song.getGenre_id(),song.getArtist_id());
                         }
-
-                       // System.out.println(songlist);
 
                         System.out.println("Enter the song ID which you want to play : ");
                         int song_id = sc.nextInt();
@@ -118,20 +105,16 @@ public class Impl {
                     }
 
                     case 4: {
-                        System.out.println(" Enter the genre name : ");
+                        System.out.println(" Enter the genre type : ");
                         sc.nextLine();
                         String genreName = sc.nextLine();
                         List<Genre> genreList = GenreDAO.displayByGenre(genreName);
-                        System.out.println(genreList);
                         List<Song> songList = SongDAO.displayingSongByGenreID(genreList);
-
                         System.out.format("%-10s %-20s %-20s %-20s %-20s \n", "SongID", "SongName", "Duration", "Genre ID", "Artist ID");
                         System.out.println("--------------------------------------------------------------------------------------------------------");
                         for (Song song : songList) {
                             System.out.format("%-10s %-20s %-20s %-20s %-20s \n",song.getSong_id(),song.getSong_name(),song.getSong_duration(),song.getGenre_id(),song.getArtist_id());
                         }
-
-                       // System.out.println(songList);
 
                         System.out.println("Enter the song ID which you want to play : ");
                         int song_id = sc.nextInt();
@@ -158,9 +141,7 @@ public class Impl {
                 System.out.println(" 3 : Add songs to an exiting playlist");
                 System.out.println(" 4 : Show all songs in an existing playlist");
                 System.out.println(" 5 : Delete any song from a existing playlist ");
-//                System.out.println(" 6 : Delete an entire existing playlist ");
-//                System.out.println(" 7 : Return to previous menu ");
-              //  System.out.println(" -1 : Exit ");
+                System.out.println(" 6 : Return to previous menu ");
 
                 int userchoice = sc.nextInt();
                 switch (userchoice) {
@@ -172,7 +153,6 @@ public class Impl {
                         for (Playlist playlist1 : playlist)
                         {
                             System.out.format("%-20s %-20s \n",playlist1.getPlaylist_id(),playlist1.getName_0f_playlist());
-                            //System.out.println(playlist1);
                         }
 
                         String [] arg= new String[0];
@@ -198,7 +178,6 @@ public class Impl {
                         System.out.println("-----------------------------------------------");
                         for (Playlist playlist1 : playlist) {
                             System.out.format("%-20s %-20s \n",playlist1.getPlaylist_id(),playlist1.getName_0f_playlist());
-                            //System.out.println(playlist1);
                         }
                         System.out.println(" Enter the Playlist ID into which you want to insert song");
                         int playlist_id= sc.nextInt();
@@ -208,9 +187,6 @@ public class Impl {
                         for (Song song : songlist) {
                             System.out.format("%-10s %-20s %-20s %-20s %-20s \n",song.getSong_id(),song.getSong_name(),song.getSong_duration(),song.getGenre_id(),song.getArtist_id());
                         }
-//                        for (Song song : songlist) {
-//                             System.out.println(song);
-//                        }
                         System.out.println(" Enter the Song ID which you want to insert");
                         int song_id= sc.nextInt();
                         SongPlaylistDataDAO.addSongToAnExistingPlaylist(song_id,playlist_id);
@@ -226,11 +202,8 @@ public class Impl {
                         System.out.println("-----------------------------------------------");
                         for (Playlist playlist1 : playlist) {
                             System.out.format("%-20s %-20s \n",playlist1.getPlaylist_id(),playlist1.getName_0f_playlist());
-                            //System.out.println(playlist1);
                         }
-//                        for (Playlist playlist1 : playlist) {
-//                            System.out.println(" Playlist Id : "+""+playlist1.getPlaylist_id()+" Playlist Name : "+""+playlist1.getName_0f_playlist());
-//                        }
+
                         System.out.println(" Enter the Playlist ID into which you view : ");
                         int playlist_id = sc.nextInt();
                         List<Playlist> playlist1 = PlaylistDAO.searchPlaylistByPlaylistId(playlist_id);
@@ -241,8 +214,20 @@ public class Impl {
                         for (Song song : list) {
                             System.out.format("%-10s %-20s %-20s %-20s %-20s \n",song.getSong_id(),song.getSong_name(),song.getSong_duration(),song.getGenre_id(),song.getArtist_id());
                         }
-                        String [] arg= new String[0];
-                        Impl.main(arg);
+                        System.out.println(" Do you want to play the playlist ? :- 1-Yes, 2-Np");
+
+                        int ch = sc.nextInt();
+                        switch (ch){
+                            case 1:{
+                                songOperation.PlaySong(list);
+                                break;
+                            }
+                            case 2: {
+                                String[] arg = new String[0];
+                                Impl.main(arg);
+                                break;
+                            }
+                        }
                         break;
                     }
                     case 5: {
@@ -251,11 +236,7 @@ public class Impl {
                         System.out.println("-----------------------------------------------");
                         for (Playlist playlist1 : playlist) {
                             System.out.format("%-20s %-20s \n",playlist1.getPlaylist_id(),playlist1.getName_0f_playlist());
-                            //System.out.println(playlist1);
                         }
-//                        for (Playlist playlist1 : playlist) {
-//                            System.out.println(" Playlist Id : "+""+playlist1.getPlaylist_id()+" Playlist Name : "+""+playlist1.getName_0f_playlist());
-//                        }
                         System.out.println("Enter the playlist_id from which you remove a song. ");
                         int playlist_id = sc.nextInt();
                         List<Playlist> playlist1 = PlaylistDAO.searchPlaylistByPlaylistId(playlist_id);
@@ -271,32 +252,12 @@ public class Impl {
                         SongPlaylistDataDAO.removeSongsFromPlaylist(song_id,playlist_id);
                         System.out.println("Selected Song deleted from the currently selected playlist successfully");
 
-//                        System.out.format("%-20s %-20s \n", "PlayList ID", "PlayList Name");
-//                        System.out.println("-----------------------------------------------");
-//                        for (Playlist playlist2 : playlist) {
-//                            System.out.format("%-20s %-20s \n",playlist2.getPlaylist_id(),playlist2.getName_0f_playlist());
-//                            //System.out.println(playlist1);
-//                        }
+
                         String [] arg= new String[0];
                         Impl.main(arg);
                         break;
                     }
-                    case 6: {
-                        List <Playlist> playlist = PlaylistDAO.showAllExistingPlaylists();
-                        System.out.format("%-20s %-20s \n", "PlayList ID", "PlayList Name");
-                        System.out.println("-----------------------------------------------");
-                        for (Playlist playlist1 : playlist) {
-                            System.out.format("%-20s %-20s \n",playlist1.getPlaylist_id(),playlist1.getName_0f_playlist());
-                            //System.out.println(playlist1);
-                        }
-//                        for (Playlist playlist1 : playlist) {
-//                            System.out.println(" Playlist Id : "+""+playlist1.getPlaylist_id()+" Playlist Name : "+""+playlist1.getName_0f_playlist());
-//                        }
-                        System.out.println("Enter the id of the playlist you want deleted :");
-                        int playlist_id = sc.nextInt();
-                        PlaylistDAO.deleteAnExistingPlaylist(playlist_id);
-                    }
-                    case 7 : {
+                    case 6 : {
                         String [] arg= new String[0];
                         Impl.main(arg);
                         break;

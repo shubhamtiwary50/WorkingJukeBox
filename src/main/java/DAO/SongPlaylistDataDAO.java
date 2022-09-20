@@ -13,7 +13,6 @@ public class SongPlaylistDataDAO {
         Connection connection = DBConnection.getConnection();
         String sql = "Insert into songsplaylistdata (song_id, playlist_id) " +
                 "values ('" + song_id + "','" + playlist_id + "')";
-        // PreparedStatement preparedStatement = connection.prepareStatement(sql);
         Statement statement = connection.createStatement();
         statement.executeUpdate(sql);
     }

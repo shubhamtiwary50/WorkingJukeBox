@@ -11,16 +11,15 @@ import java.util.Scanner;
 
 public class SongOperation {
 
-    List<Song> songsList;
+    List<Song> songslist;
     int songIndex;
 
     public void PlaySong(List<Song> songslist) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
         Scanner scanner = new Scanner(System.in);
-        this.songsList = songslist;
+        this.songslist = songslist;
         for (int i = 0; i < songslist.size(); i++) {
             songIndex = i;
-            PlaySong(songslist.get(i).getSong_path());
             PlaySong(songslist.get(i).getSong_path());
         }
     }
@@ -72,14 +71,14 @@ public class SongOperation {
                         clip.close();
                         break;
                     case ("N"):
-                        songIndex += 1;
+                        songIndex =songIndex + 1;
                         clip.close();
-             //           PlaySong(songslist.get(songIndex).g());
+                        PlaySong(songslist.get(songIndex).getSong_path());
                         break;
                     case ("O"):
-                        songIndex -= 1;
+                        songIndex =songIndex- 1;
                         clip.close();
-                 //       PlaySong(songslist.get(songIndex).getSong_path());
+                        PlaySong(songslist.get(songIndex).getSong_path());
                         break;
                     case("M"):
                         String[] arg = new String[0];

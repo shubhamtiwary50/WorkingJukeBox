@@ -15,8 +15,6 @@ public class SongDAO {
     public static List<Song> displayAll() throws SQLException, ClassNotFoundException,NumberFormatException{ //displays all songs
         Connection connection = DBConnection.getConnection();
         List<Song> songList = new ArrayList<>();
-//        String query = "select songs.sno, playlistentry.name, playlistentry.artist, songs.album, songs.genre, playlistentry.duration\n" +
-//                "from playlistentry join songs on playlistentry.sno = songs.entryno;\n";
         String sql = "SELECT * FROM songs;";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery(sql);
@@ -37,7 +35,6 @@ public class SongDAO {
         Connection connection = DBConnection.getConnection();
         List<Song> songList = new ArrayList<>();
         String sql = "SELECT * from songs where song_name like '%" + name + "%'";
-//        String sql = "Select class_id from class_tbl where class_name = ? and section = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -49,7 +46,7 @@ public class SongDAO {
             double duration = resultSet.getDouble(3);
             String artist_id = resultSet.getString(5);
             String genre_id = resultSet.getString(6);
-            Song songs = new Song(id, name,duration,song_path, artist_id, genre_id);
+            Song songs = new Song(id, name1,duration,song_path, artist_id, genre_id);
             songList.add(songs);
         }
         return songList;
@@ -84,7 +81,6 @@ public class SongDAO {
         for (Genre e: genreList)
         {
             String sql = "SELECT * from songs where genre_id = '"+e.getGenre_id()+"'";
-//          String sql = "Select class_id from class_tbl where class_name = ? and section = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             ResultSet resultSet = preparedStatement.executeQuery();
