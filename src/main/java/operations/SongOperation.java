@@ -37,7 +37,7 @@ public class SongOperation {
             String response = "";
 
             while (!response.equals("Q")) {
-                System.out.println("P = Play, T= Pause, S=Stop, L=Loop, R = Reset, Q = Quit,N = NextSong,O = previousSong,M = MAIN MENU");
+                System.out.println("P = Play, T= Pause, S=Stop, R = Reset, N = NextSong, O = previousSong, M = MAIN MENU");
                 System.out.print("Enter your choice: ");
 
                 response = scanner.next();
@@ -58,18 +58,11 @@ public class SongOperation {
                         clip.stop();
                         break;
                     }
-                    case ("L"): {
-                        clip.start();
-                        clip.loop(Clip.LOOP_CONTINUOUSLY);
-                    }
 
                     case ("R"):
                         clip.setMicrosecondPosition(0);
                         break;
 
-                    case ("Q"):
-                        clip.close();
-                        break;
                     case ("N"):
                         songIndex =songIndex + 1;
                         clip.close();

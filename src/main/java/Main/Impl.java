@@ -52,9 +52,7 @@ public class Impl {
                              int song_id = sc.nextInt();
                              String song_path = SongDAO.fetchSongPathBySongId(song_id);
                              songOperation.PlaySong(song_path);
-                        //}
-//                        String [] arg= new String[0];
-//                        Impl.main(arg);
+
                         break;
                     }
 
@@ -75,8 +73,6 @@ public class Impl {
                             String song_path = SongDAO.fetchSongPathBySongId(song_id);
                              songOperation.PlaySong(song_path);
 
-//                        String [] arg= new String[0];
-//                        Impl.main(arg);
                         break;
 
                     }
@@ -99,8 +95,6 @@ public class Impl {
                         String song_path = SongDAO.fetchSongPathBySongId(song_id);
                         songOperation.PlaySong(song_path);
 
-//                        String [] arg= new String[0];
-//                        Impl.main(arg);
                         break;
                     }
 
@@ -121,8 +115,6 @@ public class Impl {
                         String song_path = SongDAO.fetchSongPathBySongId(song_id);
                         songOperation.PlaySong(song_path);
 
-//                        String [] arg= new String[0];
-//                        Impl.main(arg);
                         break;
                     }
                     case 5 : {

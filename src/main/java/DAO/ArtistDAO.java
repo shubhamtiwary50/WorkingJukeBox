@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ArtistDAO {
 public static List<Artist> displayByArtistName(String artistName) throws SQLException, ClassNotFoundException
-{ //displays by artist name entered by user
+{
     Connection connection = DBConnection.getConnection();
     List <Artist> artistList = new ArrayList<>();
     String sql = "SELECT * FROM artist where artist_name like '%"+artistName+"%'";

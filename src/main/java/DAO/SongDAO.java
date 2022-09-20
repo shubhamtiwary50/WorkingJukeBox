@@ -58,7 +58,6 @@ public class SongDAO {
         for (Artist e: artistList)
         {
         String sql = "SELECT * from songs where artist_id = '"+e.getArtist_id()+"'";
-//        String sql = "Select class_id from class_tbl where class_name = ? and section = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         ResultSet resultSet = preparedStatement.executeQuery();
