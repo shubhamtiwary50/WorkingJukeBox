@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb5b389-ccf2-44f0-9096-8376839679b6" name="Changes" comment="Fixed the database issue, able to play individual songs now, working on playing playlists">
+    <list default="true" id="eeb5b389-ccf2-44f0-9096-8376839679b6" name="Changes" comment="Final commit, able to play playlists as well">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/PlaylistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/SongDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Impl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/operations/SongOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/operations/SongOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DAO/PlaylistDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DAO/PlaylistDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DAO/SongDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DAO/SongDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <recent name="DAO" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Impl">
+  <component name="RunManager" selected="JUnit.SongDAOTest">
     <configuration name="Impl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main.Impl" />
       <module name="WorkingJukeBox" />
@@ -78,38 +78,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArtistDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JukeBox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.ArtistDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GenreDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JukeBox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.GenreDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SongDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JukeBox" />
+      <module name="WorkingJukeBox" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="DAO.*" />
@@ -123,8 +93,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SongPlaylistDataDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JukeBox" />
+    <configuration name="SongDAOTest.displayingSongByArtistID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WorkingJukeBox" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="DAO.*" />
@@ -132,19 +102,52 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.SongPlaylistDataDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="DAO.SongDAOTest" />
+      <option name="METHOD_NAME" value="displayingSongByArtistID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SongDAOTest.displayingSongByGenreID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WorkingJukeBox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DAO" />
+      <option name="MAIN_CLASS_NAME" value="DAO.SongDAOTest" />
+      <option name="METHOD_NAME" value="displayingSongByGenreID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SongDAOTest.showSongbySongId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WorkingJukeBox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DAO" />
+      <option name="MAIN_CLASS_NAME" value="DAO.SongDAOTest" />
+      <option name="METHOD_NAME" value="showSongbySongId" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Impl" />
-        <item itemvalue="JUnit.GenreDAOTest" />
-        <item itemvalue="JUnit.ArtistDAOTest" />
-        <item itemvalue="JUnit.SongPlaylistDataDAOTest" />
         <item itemvalue="JUnit.SongDAOTest" />
+        <item itemvalue="JUnit.SongDAOTest.showSongbySongId" />
+        <item itemvalue="Application.Impl" />
+        <item itemvalue="JUnit.SongDAOTest.displayingSongByGenreID" />
+        <item itemvalue="JUnit.SongDAOTest.displayingSongByArtistID" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663645515443</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Final commit, able to play playlists as well">
+      <created>1663650137317</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663650137317</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +215,8 @@
     <MESSAGE value="Second commit" />
     <MESSAGE value="Able to play individual songs , working on implementing playlist play functionality" />
     <MESSAGE value="Fixed the database issue, able to play individual songs now, working on playing playlists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the database issue, able to play individual songs now, working on playing playlists" />
+    <MESSAGE value="Final commit, able to play playlists as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit, able to play playlists as well" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

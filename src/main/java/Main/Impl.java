@@ -16,7 +16,7 @@ public class Impl {
         Impl obj = new Impl();
         SongOperation songOperation = new SongOperation();
         Scanner sc = new Scanner(System.in);
-        System.out.println("=========================================================================================");
+        System.out.println("======================================||Juke-Box||===========================================");
         System.out.println("----------------------------    Please make a choice :   ---------------------------------");
         System.out.println("=========================================================================================");
         System.out.println(" 1 : Songs");
@@ -84,9 +84,9 @@ public class Impl {
                     case 3: {
                         System.out.println(" Enter the artist name : ");
                         sc.nextLine();
-                        String artistName = sc.nextLine();
-                        List<Artist> artistList = ArtistDAO.displayByArtistName(artistName);
-                        List<Song> songlist = SongDAO.displayingSongByArtistID(artistList);
+                        String artist_Name = sc.nextLine();
+                        List<Artist> artistlist = ArtistDAO.displayByArtistName(artist_Name);
+                        List<Song> songlist = SongDAO.displayingSongByArtistID(artistlist);
 
                         System.out.format("%-10s %-20s %-20s %-20s %-20s \n", "SongID", "SongName", "Duration", "Genre ID", "Artist ID");
                         System.out.println("--------------------------------------------------------------------------------------------------------");
@@ -108,11 +108,11 @@ public class Impl {
                         System.out.println(" Enter the genre type : ");
                         sc.nextLine();
                         String genreName = sc.nextLine();
-                        List<Genre> genreList = GenreDAO.displayByGenre(genreName);
-                        List<Song> songList = SongDAO.displayingSongByGenreID(genreList);
+                        List<Genre> genrelist = GenreDAO.displayByGenre(genreName);
+                        List<Song> songlist = SongDAO.displayingSongByGenreID(genrelist);
                         System.out.format("%-10s %-20s %-20s %-20s %-20s \n", "SongID", "SongName", "Duration", "Genre ID", "Artist ID");
                         System.out.println("--------------------------------------------------------------------------------------------------------");
-                        for (Song song : songList) {
+                        for (Song song : songlist) {
                             System.out.format("%-10s %-20s %-20s %-20s %-20s \n",song.getSong_id(),song.getSong_name(),song.getSong_duration(),song.getGenre_id(),song.getArtist_id());
                         }
 

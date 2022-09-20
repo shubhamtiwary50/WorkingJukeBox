@@ -51,7 +51,8 @@ public class SongDAO {
         }
         return songList;
     }
-    public static List<Song> displayingSongByArtistID(List<Artist> artistList) throws SQLException, ClassNotFoundException {
+    public static List<Song> displayingSongByArtistID(List<Artist> artistList) throws SQLException, ClassNotFoundException
+    {
         Connection connection = DBConnection.getConnection();
         List<Song> songList = new ArrayList<>();
         for (Artist e: artistList)

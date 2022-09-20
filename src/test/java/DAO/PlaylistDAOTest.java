@@ -1,7 +1,6 @@
 package DAO;
 
 import Data.Playlist;
-import Data.Song;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +27,7 @@ class PlaylistDAOTest {
     @Test
     void showAllExistingPlaylists() throws SQLException, ClassNotFoundException {
         List<Playlist> songsList = PlaylistDAO.showAllExistingPlaylists();
-        assertEquals(6,songsList.size());
+        assertEquals(12,songsList.size());
     }
 
     @Test
@@ -38,8 +37,4 @@ class PlaylistDAOTest {
         assertEquals(1,songsList.size());
     }
 
-//    @Test
-//    void deleteAnExistingPlaylist() {
-//
-//    }
 }

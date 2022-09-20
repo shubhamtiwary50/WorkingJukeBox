@@ -1,7 +1,6 @@
 package DAO;
 
-import Data.Playlist;
-import Data.Song;
+import Data.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,17 +39,24 @@ class SongDAOTest {
     }
 
     @Test
-    void displayingSongByArtistID() {
-
-//        List<Song> songList = SongDAO.displayingSongByArtistID();
-//        assertEquals(1,songList.size());
+    void displayingSongByArtistID() throws SQLException, ClassNotFoundException {
+        String artistName = "arijit";
+        List<Artist> artistList = ArtistDAO.displayByArtistName(artistName);
+        List<Song> songlist = SongDAO.displayingSongByArtistID(artistList);
+        assertEquals(2,songlist.size());
     }
 
     @Test
-    void displayingSongByGenreID() {
+    void displayingSongByGenreID() throws SQLException, ClassNotFoundException {
+        String genreName = "classical";
+        List<Genre> genreList = GenreDAO.displayByGenre(genreName);
+        List<Song> songlist = SongDAO.displayingSongByGenreID(genreList);
+        assertEquals(1,songlist.size());
+
     }
 
-    @Test
-    void showSongbySongId() {
-    }
+//    @Test
+//    void showSongbySongId() throws SQLException, ClassNotFoundException {
+//
+//    }
 }
