@@ -116,8 +116,8 @@ public class SongDAO {
             {
                 int song_id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
-                String song_path = resultSet.getString(4);
                 double song_duration = resultSet.getDouble(3);
+                String song_path = resultSet.getString(4);
                 String genre_id = resultSet.getString(5);
                 String artist_id = resultSet.getString(6);
                 Song song = new Song(song_id, name,song_duration,song_path, artist_id, genre_id);

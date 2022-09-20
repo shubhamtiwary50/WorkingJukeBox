@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eeb5b389-ccf2-44f0-9096-8376839679b6" name="Changes" comment="Second commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/DAO/ArtistDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DAO/GenreDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DAO/PlaylistDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DAO/SongDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DAO/SongPlaylistDataDAOTest.java" afterDir="false" />
+    <list default="true" id="eeb5b389-ccf2-44f0-9096-8376839679b6" name="Changes" comment="Able to play individual songs , working on implementing playlist play functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/PlaylistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/SongDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/SongDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Data/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Data/Song.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Impl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/operations/SongOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/operations/SongOperation.java" afterDir="false" />
     </list>
@@ -57,8 +50,8 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
-    "last_opened_file_path": "D:/New folder (2)/BIrdBOx/jukebox-project/jukebox-project",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "D:/Wave 33/WorkingJukeBox",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
@@ -74,13 +67,28 @@
   <component name="RunManager" selected="Application.Impl">
     <configuration name="Impl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main.Impl" />
-      <module name="JukeBox" />
+      <module name="WorkingJukeBox" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArtistDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JukeBox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DAO" />
+      <option name="MAIN_CLASS_NAME" value="DAO.ArtistDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -95,21 +103,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="DAO" />
       <option name="MAIN_CLASS_NAME" value="DAO.GenreDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaylistDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JukeBox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="DAO.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="DAO" />
-      <option name="MAIN_CLASS_NAME" value="DAO.PlaylistDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,10 +141,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Impl" />
+        <item itemvalue="JUnit.GenreDAOTest" />
+        <item itemvalue="JUnit.ArtistDAOTest" />
         <item itemvalue="JUnit.SongPlaylistDataDAOTest" />
         <item itemvalue="JUnit.SongDAOTest" />
-        <item itemvalue="JUnit.PlaylistDAOTest" />
-        <item itemvalue="JUnit.GenreDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663561446573</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Able to play individual songs , working on implementing playlist play functionality">
+      <created>1663589033085</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663589033085</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +196,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="Second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
+    <MESSAGE value="Able to play individual songs , working on implementing playlist play functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Able to play individual songs , working on implementing playlist play functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,7 @@
 package DAO;
 
 import Data.Playlist;
+import Data.Song;
 import Utilities.DBConnection;
 
 import java.sql.*;
@@ -51,6 +52,22 @@ public class PlaylistDAO {
         }
         return playlistList;
     }
+//public static List<Song> searchPlaylistByPlaylistId(int playlist_id) throws SQLException, ClassNotFoundException
+//{
+//    Connection connection = DBConnection.getConnection();
+//    List<Song> playlistList = new ArrayList<>();
+//    String sql = "SELECT* FROM playlist WHERE playlist_id = '" + playlist_id + "'";
+//    PreparedStatement preparedStatement = connection.prepareStatement(sql);
+//    ResultSet resultSet = preparedStatement.executeQuery();
+//    while (resultSet.next()){
+//        int id = resultSet.getInt(1);
+//        String name = resultSet.getString(2);
+//
+//        Playlist playlist = new Playlist(id,name);
+//        playlistList.add(playlist);
+//    }
+//    return playlistList;
+//}
     public static void deleteAnExistingPlaylist(int playlist_id) throws SQLException, ClassNotFoundException {
         Connection connection = DBConnection.getConnection();
         String sql = "Delete from playlist Where playlist_id = '" + playlist_id + "'";

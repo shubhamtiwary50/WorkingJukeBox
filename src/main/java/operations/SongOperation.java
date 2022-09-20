@@ -1,4 +1,5 @@
 package operations;
+import Data.Playlist;
 import Data.Song;
 import Main.Impl;
 
@@ -10,17 +11,17 @@ import java.util.Scanner;
 
 public class SongOperation {
 
-    List<Song> songslist;
+    List<Song> songsList;
     int songIndex;
 
     public void PlaySong(List<Song> songslist) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
         Scanner scanner = new Scanner(System.in);
-        this.songslist = songslist;
+        this.songsList = songslist;
         for (int i = 0; i < songslist.size(); i++) {
             songIndex = i;
             PlaySong(songslist.get(i).getSong_path());
-          //  PlaySong(songslist.get(i).getSongPath());
+            PlaySong(songslist.get(i).getSong_path());
         }
     }
 
@@ -37,7 +38,7 @@ public class SongOperation {
             String response = "";
 
             while (!response.equals("Q")) {
-                System.out.println("P = play, T= Pause, S=Stop, L=Loop, R = Reset, Q = Quit,N = NextSong,O = previousSong,M = MAIN MENU");
+                System.out.println("P = Play, T= Pause, S=Stop, L=Loop, R = Reset, Q = Quit,N = NextSong,O = previousSong,M = MAIN MENU");
                 System.out.print("Enter your choice: ");
 
                 response = scanner.next();
@@ -73,12 +74,12 @@ public class SongOperation {
                     case ("N"):
                         songIndex += 1;
                         clip.close();
-                        PlaySong(songslist.get(songIndex).getSong_path());
+             //           PlaySong(songslist.get(songIndex).g());
                         break;
                     case ("O"):
                         songIndex -= 1;
                         clip.close();
-                        PlaySong(songslist.get(songIndex).getSong_path());
+                 //       PlaySong(songslist.get(songIndex).getSong_path());
                         break;
                     case("M"):
                         String[] arg = new String[0];
